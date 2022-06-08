@@ -11,15 +11,21 @@ namespace ariel{
     string Game::winner(){
         this->score.push_back(rand_score(this->t1));
         this->score.push_back(rand_score(this->t2));
+        t1.shot_out += rand_score(this->t2);
+        t2.shot_out += rand_score(this->t1);
         if(this->score[0] >= this->score[1]){
-            return this->t1.get_name();
             t1.wins++;
+            t1.last_wins++;
             t2.lost++;
+            t2.last_lost++;
+            return this->t1.get_name();
         }
         else{
-            return this->t2.get_name();
             t2.wins++;
+            t2.last_wins++;
             t1.lost++;
+            t2.last_lost++;
+            return this->t2.get_name();
         }
     }
 
@@ -33,6 +39,7 @@ namespace ariel{
         if(home){
             submit = special_result;
         }
+        t1.shot_in += submit;
         return submit;
     }
 

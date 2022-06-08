@@ -7,11 +7,11 @@ using namespace std;
 namespace ariel{
 class Leauge{
     private:
-        vector<Team> leauge;
+        vector<Team> teams;
     public:
         Leauge();
-        Leauge(vector<Team> leauge);
-        Leauge(vector<Team> leauge);
+        Leauge(vector<Team> teams);
+        Leauge(vector<Team> teams);
         ~Leauge();
         vector<Team> get_leauge();
 };
